@@ -1,0 +1,18 @@
+#https://kubernetes.io/docs/concepts/storage/volumes/#hostpath
+#https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/
+#Kubernetes supports hostPath for development and testing on a single-node cluster. A hostPath PersistentVolume uses a file or directory on the Node to emulate network-attached storage.
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: hostpath-pv
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 100Mi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data"
