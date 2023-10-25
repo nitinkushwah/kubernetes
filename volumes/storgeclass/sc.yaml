@@ -1,0 +1,14 @@
+#reclaimpolicy: 
+#Delete: when pvc is deleted pv is also deleted (underlying volume/data remains).
+#Retain: when pvc is deleted pv is retained.
+#VolumeBindingMode: Immediate/WaitforFirstConsumer
+
+#Immediate: PV is created and bound as soon as PVC is created. 
+#waitforfirstconsumer: PV is only created only when pod uses PVC.
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: newclass
+provisioner: k8s.io/minikube-hostpath
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer

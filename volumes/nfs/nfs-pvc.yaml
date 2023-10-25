@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: nfs-pvc
 spec:
-  storageClassName: nfs
+  storageClassName: nfsclass
   resources:
     requests:
       storage: 10Mi
