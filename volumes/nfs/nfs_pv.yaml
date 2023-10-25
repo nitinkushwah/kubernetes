@@ -9,5 +9,5 @@ spec:
     - ReadWriteMany
   storageClassName: nfsclass
   nfs:
-    server: 172.20.10.3
+    server: <serverIP>
     path: "/home/nitin/nfs"
